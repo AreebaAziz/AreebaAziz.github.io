@@ -16,15 +16,35 @@ body {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .22em; /* Adjust as needed */
+/*  margin: 0 auto;  Gives that scrolling effect as the typing happens 
+*/  letter-spacing: .22em; /* Adjust as needed */
   animation: 
-    typing 1.2s steps(11, end),
+    typing 1.2s steps(12, end),
     blink-caret .9s step-end infinite;
 }
 
 h1 {
+	color: #fff;
 	font-size: 6em;
+}
+
+/* background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+*/
+h2 {
+	letter-spacing: .22em; 
+	white-space: nowrap; 
+	color: #fff;
+	font-size: 3.2em;
+	background: linear-gradient(to right, #4f8cbc, #3dd5ab);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.fa:hover {
+	background: linear-gradient(to right, #38668a, #487fab);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+
 }
 
 /* The typing effect */
