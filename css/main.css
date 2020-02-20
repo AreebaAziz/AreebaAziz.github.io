@@ -46,6 +46,9 @@ h2 {
 	text-decoration: none;
 
 }
+#pdficon {
+	font-size: 0.9em;
+}
 
 /* The typing effect */
 @keyframes typing {
