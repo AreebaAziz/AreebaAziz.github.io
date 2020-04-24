@@ -3,24 +3,23 @@ html, body {
 }
 
 body {
- 	background: rgb(123,75,153);
-	background: linear-gradient(63deg, rgba(123,75,153,1) 4%, rgba(218,60,53,1) 40%, rgba(235,118,61,1) 71%, rgba(252,176,69,1) 86%);  
+	background: rgb(47,43,44);
+/* 	background: rgb(123,75,153);
+	background: linear-gradient(63deg, rgba(123,75,153,1) 4%, rgba(218,60,53,1) 40%, rgba(235,118,61,1) 71%, rgba(252,176,69,1) 86%); */ 
 	display: flex;
 }
 
 /* Typewriter effect taken from: https://css-tricks.com/snippets/css/typewriter-effect/ */
 /* DEMO-SPECIFIC STYLES */
+
 .typewriter {
-  color: #fff;
-  font-family: 'Anonymous Pro', monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-/*  margin: 0 auto;  Gives that scrolling effect as the typing happens 
-*/  letter-spacing: .22em; /* Adjust as needed */
-  animation: 
-    typing 1.2s steps(12, end),
-    blink-caret .9s step-end infinite;
+	color: #fff;
+	font-family: 'Anonymous Pro', monospace;
+	letter-spacing: .22em;
+}
+
+main {
+	width: 100%;
 }
 
 h1 {
@@ -28,37 +27,26 @@ h1 {
 	font-size: 6em;
 }
 
-/* background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-*/
 h2 {
 	letter-spacing: .22em; 
-	white-space: nowrap; 
 	color: #fff;
 	font-size: 3.2em;
-	background: linear-gradient(to right, #4f8cbc, #3dd5ab);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
-.fa:hover {
-	background: linear-gradient(to right, #38668a, #487fab);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+
+#blog {
+	letter-spacing: .10em;
+	font-size: 0.7em;
+}
+
+.fa, a {
+	color: rgba(225, 144, 86, 0.8);
+}
+
+.fa:hover, a:hover {
+	color: rgba(225, 144, 86, 0.55);
 	text-decoration: none;
 
 }
 #pdficon {
 	font-size: 0.9em;
 }
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-
