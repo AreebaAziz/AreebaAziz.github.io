@@ -30,7 +30,13 @@ body, html {
 /* Third image (Contact) */
 .bgimg-3 {
   background-image: url("../img/background3.jpg");
-  min-height: 400px;
+  min-height: 200px;
+}
+
+/* Footer image */
+.bgimg-4 {
+  background-image: url("../img/background5.png");
+  min-height: 200px;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -46,4 +52,8 @@ body, html {
 
 .high-opacity {
 	opacity: 88%;
+}
+
+.medium-opacity {
+	opacity: 75%;
 }
