@@ -15,19 +15,21 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/w3images/parallax1.jpg');
+  background-image: url('../img/background1.jpg');
   min-height: 100%;
+  opacity: 85%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("/w3images/parallax2.jpg");
+  background-image: url("../img/background2.jpg");
   min-height: 400px;
+  opacity: 85%;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("/w3images/parallax3.jpg");
+  background-image: url("../img/background3.jpg");
   min-height: 400px;
 }
 
@@ -40,4 +42,8 @@ body, html {
     background-attachment: scroll;
     min-height: 400px;
   }
+}
+
+.high-opacity {
+	opacity: 88%;
 }
