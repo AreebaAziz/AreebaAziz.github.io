@@ -1,64 +1,43 @@
-html, body {
-	height: 100%;
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
 }
 
-body {
- 	background: rgb(123,75,153);
-	background: linear-gradient(63deg, rgba(123,75,153,1) 4%, rgba(218,60,53,1) 40%, rgba(235,118,61,1) 71%, rgba(252,176,69,1) 86%);  
-	display: flex;
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Typewriter effect taken from: https://css-tricks.com/snippets/css/typewriter-effect/ */
-/* DEMO-SPECIFIC STYLES */
-.typewriter {
-  color: #fff;
-  font-family: 'Anonymous Pro', monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-/*  margin: 0 auto;  Gives that scrolling effect as the typing happens 
-*/  letter-spacing: .22em; /* Adjust as needed */
-  animation: 
-    typing 1.2s steps(12, end),
-    blink-caret .9s step-end infinite;
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
 }
 
-h1 {
-	color: #fff;
-	font-size: 6em;
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
 }
 
-/* background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-*/
-h2 {
-	letter-spacing: .22em; 
-	white-space: nowrap; 
-	color: #fff;
-	font-size: 3.2em;
-	background: linear-gradient(to right, #4f8cbc, #3dd5ab);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.fa:hover {
-	background: linear-gradient(to right, #38668a, #487fab);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-decoration: none;
-
-}
-#pdficon {
-	font-size: 0.9em;
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
 }
-
