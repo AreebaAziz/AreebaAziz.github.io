@@ -57,3 +57,7 @@ body, html {
 .medium-opacity {
 	opacity: 75%;
 }
+
+.black-bg {
+  background-color: rgba(10, 10, 20, 0.7);
+}
