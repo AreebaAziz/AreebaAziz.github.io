@@ -61,3 +61,8 @@ body, html {
 .black-bg {
   background-color: rgba(10, 10, 20, 0.7);
 }
+
+.aa-table th {
+  background-color: rgba(233, 30, 99, 0.55);
+  color: rgba(40, 40, 40, 0.8);
+}
