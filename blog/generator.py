@@ -9,6 +9,7 @@ import os
 SECTIONS = "sections"
 TAGS = "tags"
 POSTS = "posts"
+TEMPLATE_HTML = "template.html"
 
 try:
     filename = sys.argv[1]
@@ -34,6 +35,7 @@ file.close()
 
 sections = re.findall("%% ?begin ?(\[[^\]]*][^%]*)%% ?end", text, re.DOTALL)
 full_content = ""
+all_tags = []
 
 for si in range(len(sections)):
     tags = re.findall("\[(.*)\]", sections[si])
@@ -51,6 +53,7 @@ for si in range(len(sections)):
 
         # create or append to tag files
         for tag in tags:
+            all_tags.append(tag)
             file = open(TAGS + "/" + tag, "a")
             file.write(sec_filename.replace(SECTIONS + "/", "") + "\n")
             file.close()
@@ -64,3 +67,23 @@ file.close()
 
 # now write it in HTML format
 os.system("markdown2 {0}.md > {0}.html".format(blog_filename))
+
+# read the html generated
+file = open(blog_filename + ".html", "r")
+html_content = file.read()
+file.close()
+
+# read the template html file
+file = open(TEMPLATE_HTML, "r")
+template = file.read()
+file.close()
+
+# replace appropriate blog content in the template
+content = template.replace("%%WEEK_NUM%%", "{}/{}/{}".format(week[0:2], week[2:4], week[4:6]))
+content = content.replace("%%TAGS%%", ", ".join(all_tags))
+content = content.replace("%%CONTENT%%", html_content)
+
+# write this content to the html file
+file = open(blog_filename + ".html", "w")
+file.write(content)
+file.close()

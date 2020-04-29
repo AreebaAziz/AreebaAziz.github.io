@@ -20,6 +20,10 @@ body, html {
   opacity: 85%;
 }
 
+.bg-sm {
+  min-height: 50%;
+}
+
 /* Second image (Portfolio) */
 .bgimg-2 {
   background-image: url("../img/background2.jpg");
@@ -65,4 +69,16 @@ body, html {
 .aa-table th {
   background-color: rgba(233, 30, 99, 0.55);
   color: rgba(40, 40, 40, 0.8);
+}
+
+.aa-table td a { 
+   display: block;
+}
+
+.aa-table td:first-child:hover {
+  background-color:#ccc;
+}
+
+.ultrawide {
+  letter-spacing:8px;
 }
