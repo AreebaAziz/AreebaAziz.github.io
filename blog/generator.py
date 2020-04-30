@@ -39,10 +39,11 @@ all_tags = []
 
 for si in range(len(sections)):
     tags = re.findall("\[(.*)\]", sections[si])
+    text = sections[si].replace(tags[0], '', 1).replace('[','',1).replace(']','',1)
     tags = [s.strip() for s in tags[0].split(",")]
+
     sec_filename = SECTIONS + "/w-{week}-s-{seci:02d}".format(week=week,seci=si)
     # create the section file
-    text = re.findall("\[.*\](.*)", sections[si], re.DOTALL)[0].strip()
     if text != "": 
         full_content += text
 
@@ -53,10 +54,11 @@ for si in range(len(sections)):
 
         # create or append to tag files
         for tag in tags:
-            all_tags.append(tag)
-            file = open(TAGS + "/" + tag, "a")
-            file.write(sec_filename.replace(SECTIONS + "/", "") + "\n")
-            file.close()
+            if tag != '':
+                all_tags.append(tag)
+                file = open(TAGS + "/" + tag, "a")
+                file.write(sec_filename.replace(SECTIONS + "/", "") + "\n")
+                file.close()
 
 # now write the full contents of the blog post in one file
 blog_filename = POSTS + "/w-{week}".format(week=week)

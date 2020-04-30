@@ -1,26 +1,5 @@
 
 
-Hello and welcome to my blog! This is my first blog post and I'm really excited to be documenting my journey of exploring lots of 
-tech. 
-
-My exams ended on April 22, and since then I've been thinking about what cool projects I'll want to work on over the summer. I only 
-have a week off before I start my remote internship at Amazon on May 4. 
-
-
-
-### ProjectBudget
-
-First I thought I'd be working on a project I've been meaning to complete for a while, called "ProjectBudget". It's a simple desktop app 
-where you can enter your income and expenses information, particularly the big ones that repeat like rent/bills/salary, and the app will
-draw a graph that'll show you how much money you'll have in any given time in the future. I know there probably exist a bunch of apps 
-like this, but I wanted a simple one with minimal functionality, and one that stores data locally. I started building it using Python and the 
-PyQt framework. I'm choosing not to use any other frameworks such as Django because I only need to do minimal database stuff and I don't need
-the full functionality of Django. 
-
-You can find the repo of ProjectBudget on [GitHub](https://github.com/AreebaAziz/ProjectBudget). As of today (April 29, 2020), it is incomplete.
-
-
-
 ### FPGA Development
 
 The other thing I really wanted to get into is FPGA development! I took 2 courses where we developed on FPGAs, but I won't be taking any more
@@ -102,21 +81,3 @@ My goals in terms of FPGA+HPS development for the rest of the summer are:
 - port labs 3, 4, 5 from my digital circuits course over to the DE10-Nano board
 - the goal above seems like it would take all summer because I only really have evenings and weekends since I'll be working full time with Amazon. I don't know how much free time I'll have yet, or how much overtime I'll do (not because I have to do overtime, but because I'll probably be super invested in my Amazon projects that I'll want to spend a lot of time on them). 
 
-
-
-### Personal Website
-
-The other thing I did this week is revamp my personal website. Before the revamp, my personal website was a single page simple website
-with just my name written animated as if it was being written in a terminal, and some links for my contact information. I wanted to start
-documenting the stuff I do on the side (the tech projects), so I decided to write a "blog post" every week where I document what I did
-that week and what I learned. Right now the main reason I'm doing this is so I can keep everything I am learning/doing in one place, so I can
-remember little things in the future. I know once I get my DE10-Nano board I'll be learning a lot of new things and I want to keep all my notes
-somewhere accessible by me and by others who are also interested in getting into hobby FPGA development. 
-
-I revamped my website using a template I found from w3schools. It was a basic 1 page parallex template - just what I needed. I used my sister's
-original artwork as the backgrounds because I think they're really pretty! In the end my revamp of the website turned out to look really artsy..
-perhaps a bit too artsy for someone in software engineering? Usually when I see other developer's personal websites, they're all super cool
-with fancy CSS/JS and the themes are all very tech-y and they all look very good. I really like how my website turned out, even if it looks
-too artsy. Because this website is *my* personal space. There are no rules here; I can express myself the way I want to. For someone seeking a more 
-professional portfolio, check out my [LinkedIn](https://www.linkedin.com/in/areeba-aziz/) or [resume](../../pdf/Resume_11.pdf)! But I hope to use this website to just be me. And to share my experiences of exploring cool tech projects! 
- 

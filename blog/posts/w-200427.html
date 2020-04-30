@@ -49,13 +49,130 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
 <!-- blog body --->
 <div class="w3-content w3-container w3-padding-32" id="about">
   <h1 class="w3-center">Week 20/04/27</h1>
-  <h4 class="w3-center">Tags: fpga, de10-nano</h4>
+  <h4 class="w3-center">Tags: Python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css</h4>
 
-<h1>some heading</h1>
+<p>Hello and welcome to my blog! This is my first blog post and I'm really excited to be documenting my journey of exploring lots of 
+tech. </p>
 
-<h2>some subheading</h2>
+<p>My exams ended on April 22, and since then I've been thinking about what cool projects I'll want to work on over the summer. I only 
+have a week off before I start my remote internship at Amazon on May 4. </p>
 
-<p>some text in markdown format</p>
+<h3>ProjectBudget</h3>
+
+<p>First I thought I'd be working on a project I've been meaning to complete for a while, called "ProjectBudget". It's a simple desktop app 
+where you can enter your income and expenses information, particularly the big ones that repeat like rent/bills/salary, and the app will
+draw a graph that'll show you how much money you'll have in any given time in the future. I know there probably exist a bunch of apps 
+like this, but I wanted a simple one with minimal functionality, and one that stores data locally. I started building it using Python and the 
+PyQt framework. I'm choosing not to use any other frameworks such as Django because I only need to do minimal database stuff and I don't need
+the full functionality of Django. </p>
+
+<p>You can find the repo of ProjectBudget on <a href="https://github.com/AreebaAziz/ProjectBudget">GitHub</a>. As of today (April 29, 2020), it is incomplete.</p>
+
+<h3>FPGA Development</h3>
+
+<p>The other thing I really wanted to get into is FPGA development! I took 2 courses where we developed on FPGAs, but I won't be taking any more
+courses on it. I didn't want my FPGA journey to end with classes, so I decided to look into doing some FPGA stuff as a hobby.</p>
+
+<p>The first step was to figure out what board I want, and if there even is one that is affordable. While I was searching, I found a Reddit
+community <a href="https://www.reddit.com/r/FPGA/">r/FPGA</a> where people who work with FPGAs - either as a hobby or for professional work - come together and talk about FPGA things!
+There are multiple posts on that subreddit that talk specifically about the first board you should get. </p>
+
+<p>After lots of research I chose to get the Terasic DE10-Nano board that has a Cyclone V FPGA, an ARM processor, and a bunch of peripherals. 
+I chose this one because I could use Quartus and ModelSim with it, and I've used Quartus before in my classes so I wanted to stick with what
+I'm familiar with. I bought the board from digikey and it will arrive tomorrow! Super excited to play around with it. </p>
+
+<p>The next step was to figure out what my first projects would be on the FPGA. I had no idea where to even begin because this is still a relatively
+new field and there's not as many resources online for beginners - at least not as many as there are for regular programming. So I decided to 
+email my professor from my digital circuits class, <a href="https://www.ece.mcmaster.ca/~nicola/">Dr. Nicola Nicolici</a>, and I asked him if he can provide any tips and guidance regarding how 
+I should start with my FPGA journey. Dr. Nicolici is AWESOME! He immediately replied asking me if I'm available for a call so we can communicate
+better about what my goals are for the summer, etc. I had the call with him on Sunday, it was a 35 minute call and I'm so grateful of him in 
+general for being so supportive when he had absolutely no obligation to. </p>
+
+<p>Basically, Dr. Nicolici gave me the wonderful idea of taking labs 3-5 from our digital circuits class and porting it to the DE10-Nano board. 
+These labs are pretty advanced and were done in another FPGA board, I don't remember which one. He said porting the labs to my board can definitely
+be done, and it's a great way for me to learn about my board and have a nice refresher on what I did in my digital circuits class. He said I will
+run into an issue with the UART because in our class's FPGA board, the UART was connected directly to the FPGA, however on the DE10-Nano board
+the UART is connected to the HPS (Hard Processing System, aka the ARM processor). So I'd have to find a way for the HPS to transfer the UART data
+to the FPGA, which means I'll have to go beyond what I learned in my class and learn how to work with an ARM processor on the low level. </p>
+
+<p>He also said that since I'll have to work with the HPS, I should be familiar with working with ARM processors (i.e. compiling images for the 
+processor, writing code to run on the processor, etc). He advised I use a different board with just an ARM processor for learning how to work
+with the processor because if I only used the DE10-Nano it'd be more complicated since that board also has an FPGA. He mentioned that the 
+Raspberry Pi's processor is ARM based! And I have a Raspberry Pi 3 Model B so that's perfect!</p>
+
+<p>So I decided to open my box of Raspberry Pi stuff for the first time in months. All I ever did on my Pi was boot the default Raspbian OS.. and
+that's pretty much it. This time though I wanted to see how to program the Pi to turn on some LEDs through its GPIO pins. </p>
+
+<p>I took some notes while I was looking into the Pi and the Nano, which are summarized below. </p>
+
+<h4>Raspberry Pi Specs</h4>
+
+<ul>
+<li>Raspberry Pi 3 Model B </li>
+<li>ARM Cortex-A53 Broadcom BCM2837 CPU (64-bit) (quadcore)</li>
+<li>ISA: ARMv8-A</li>
+<li>Raspbian OS, debian-based </li>
+<li>1 GB RAM</li>
+<li>1.2 GHz clock speed</li>
+<li>on-board WiFi, Bluetooth</li>
+<li>2x20 GPIO pin headers</li>
+</ul>
+
+<h4>My Breadboard Setup</h4>
+
+<p>This was to play with the Pi, I wanted to see how to program GPIO pins to be
+on and off. </p>
+
+<p>The physical set up was as such:</p>
+
+<ul>
+<li>4 red LEDs, 1 green LED</li>
+<li>the green LED positive end was connected to the Pi's 5V pin</li>
+<li>the green and red LEDs negative end connected to the Pi GND pin</li>
+<li>the positive ends of the 4 red LEDs were connected as such:
+<ul>
+<li>GPIO 4 - LED 0</li>
+<li>GPIO 17 - LED 1</li>
+<li>GPIO 27 - LED 2</li>
+<li>GPIO 22 - LED 3</li>
+</ul></li>
+</ul>
+
+<p>I booted the Raspberry Pi which already had the Raspbian OS I set up long
+ago. I looked up how we can control the GPIO pins, and turns out it's a lot easier than I thought. Raspbian comes with handy commands such as <code>raspi-gpio</code> which you can use to debug the GPIO pins (get and set individual values). </p>
+
+<p>To set the GPIO 4 pin to high and thus make my LED 0 turn on, I ran this: <code>sudo raspi-gpio set 4 op; sudo raspi-gpio set 4 dh</code>. The first command is to set the GPIO pin 4 to an OUTPUT value (vs INPUT), and the second command is to set the pin 4 to HIGH. </p>
+
+<p>I repeated those commands for the other 3 LED pins and yeah. </p>
+
+<p>This was pretty straightforward. However I want to be able to control the GPIO in a lower-level than the nice interface that Raspbian provides. I looked up how we can do that, and apparently there's a C library called <code>libgpiod</code> which is the best way to control the LEDs. I read that there are other libraries you can use that modify the registers directly on the Pi in order to manipulate the GPIO, however it seems that that is a bad practice method because we are accessing kernel level things directly which we shouldn't do. We should access these low-level registers etc through an interface that the kernel provides to the user space, which for the case of GPIO on ARM-based processors, is <code>libgpiod</code>. </p>
+
+<p>I was also reading about cross-compilation tools for compiling firmware images. I used buildroot during my internship at Arcturus, but I want to try out yocto now. I think when I get my DE10-Nano board, I will probably use yocto to create a basic linux image that will run on the ARM processor. I could then use yocto to further customize the image to add capabilities. </p>
+
+<p>To communicate with the Nano board (the HPS side), I can use a serial monitor. So I'll need to get a serial communication client on my Ubuntu PC (during my internship I used putty on a Windows machine). To send files to the HPS, such as code or executable files, I'll need to first cross-compile on my PC for the Nano broadcom processor, and then send it using ssh or something similar. To do this I'll need two ethernet cables: 1 cable to connect my PC to my home router, and another cable to connect my router to the Nano board. Then the board and my PC will be on the same LAN and I could then transfer files to the board. </p>
+
+<p>My goals in terms of FPGA+HPS development for the rest of the summer are:</p>
+
+<ul>
+<li>port labs 3, 4, 5 from my digital circuits course over to the DE10-Nano board</li>
+<li>the goal above seems like it would take all summer because I only really have evenings and weekends since I'll be working full time with Amazon. I don't know how much free time I'll have yet, or how much overtime I'll do (not because I have to do overtime, but because I'll probably be super invested in my Amazon projects that I'll want to spend a lot of time on them). </li>
+</ul>
+
+<h3>Personal Website</h3>
+
+<p>The other thing I did this week is revamp my personal website. Before the revamp, my personal website was a single page simple website
+with just my name written animated as if it was being written in a terminal, and some links for my contact information. I wanted to start
+documenting the stuff I do on the side (the tech projects), so I decided to write a "blog post" every week where I document what I did
+that week and what I learned. Right now the main reason I'm doing this is so I can keep everything I am learning/doing in one place, so I can
+remember little things in the future. I know once I get my DE10-Nano board I'll be learning a lot of new things and I want to keep all my notes
+somewhere accessible by me and by others who are also interested in getting into hobby FPGA development. </p>
+
+<p>I revamped my website using a template I found from w3schools. It was a basic 1 page parallex template - just what I needed. I used my sister's
+original artwork as the backgrounds because I think they're really pretty! In the end my revamp of the website turned out to look really artsy..
+perhaps a bit too artsy for someone in software engineering? Usually when I see other developer's personal websites, they're all super cool
+with fancy CSS/JS and the themes are all very tech-y and they all look very good. I really like how my website turned out, even if it looks
+too artsy. Because this website is <em>my</em> personal space. There are no rules here; I can express myself the way I want to. For someone seeking a more 
+professional portfolio, check out my <a href="https://www.linkedin.com/in/areeba-aziz/">LinkedIn</a> or <a href="../../pdf/Resume_11.pdf">resume</a>! But I hope to use this website to just be me. And to share my experiences of exploring cool tech projects! </p>
 
 
 </div>

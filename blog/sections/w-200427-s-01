@@ -1,0 +1,13 @@
+
+
+### ProjectBudget
+
+First I thought I'd be working on a project I've been meaning to complete for a while, called "ProjectBudget". It's a simple desktop app 
+where you can enter your income and expenses information, particularly the big ones that repeat like rent/bills/salary, and the app will
+draw a graph that'll show you how much money you'll have in any given time in the future. I know there probably exist a bunch of apps 
+like this, but I wanted a simple one with minimal functionality, and one that stores data locally. I started building it using Python and the 
+PyQt framework. I'm choosing not to use any other frameworks such as Django because I only need to do minimal database stuff and I don't need
+the full functionality of Django. 
+
+You can find the repo of ProjectBudget on [GitHub](https://github.com/AreebaAziz/ProjectBudget). As of today (April 29, 2020), it is incomplete.
+
