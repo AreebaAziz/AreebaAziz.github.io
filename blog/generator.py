@@ -10,6 +10,8 @@ SECTIONS = "sections"
 TAGS = "tags"
 POSTS = "posts"
 TEMPLATE_HTML = "template.html"
+INDEX_HTML = "../index.html"
+BLOG_REPLACEMENT = "<!-- ADD NEW BLOG POSTS HERE -->"
 
 try:
     filename = sys.argv[1]
@@ -88,4 +90,18 @@ content = content.replace("%%CONTENT%%", html_content)
 # write this content to the html file
 file = open(blog_filename + ".html", "w")
 file.write(content)
+file.close()
+
+# now add this blog post link to the home page (index.html)
+file = open(INDEX_HTML, "r")
+orig = file.read()
+file.close()
+
+new_blog = "{repl}\n<tr>\n<td><a href=\"blog/posts/w-{week}.html\">Week {y}/{m}/{d}</a></td>\n<td>{tags}</td>\n</tr>\n"
+new_blog = new_blog.format(week=week, y=week[0:2], m=week[2:4], d=week[4:6], tags=", ".join(all_tags), repl=BLOG_REPLACEMENT)
+
+new_index_html = orig.replace(BLOG_REPLACEMENT, new_blog)
+
+file = open(INDEX_HTML, "w")
+file.write(new_index_html)
 file.close()
