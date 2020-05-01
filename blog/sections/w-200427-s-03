@@ -3,7 +3,11 @@
 ### Personal Website
 
 The other thing I did this week is revamp my personal website. Before the revamp, my personal website was a single page simple website
-with just my name written animated as if it was being written in a terminal, and some links for my contact information. I wanted to start
+with just my name written animated as if it was being written in a terminal, and some links for my contact information.
+
+<img src="img/old_personal_website.png" alt="My old personal website" width="500"/>
+
+I wanted to start
 documenting the stuff I do on the side (the tech projects), so I decided to write a "blog post" every week where I document what I did
 that week and what I learned. Right now the main reason I'm doing this is so I can keep everything I am learning/doing in one place, so I can
 remember little things in the future. I know once I get my DE10-Nano board I'll be learning a lot of new things and I want to keep all my notes
