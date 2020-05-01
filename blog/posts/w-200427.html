@@ -13,7 +13,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../css/main.css">
 
-<body>
+<body class="blogpost">
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -25,9 +25,9 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
     <a href="../../index.html#about" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-user"></i> &nbsp;ABOUT</a>
     <a href="../../index.html#portfolio" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-briefcase"></i>&nbsp; INTERNSHIPS</a>
     <a href="../../index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-newspaper-o"></i> &nbsp;BLOG</a>
-    <a href="../../index.html#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
+
+    <a href="#projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;ProjectBudget</a><a href="#fpga-development" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;FPGA Development</a><a href="#personal-website" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Personal Website</a><a href="#getting-started-with-the-de10-nano" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Getting Started with the DE10-Nano</a>
+    
   </div>
 
   <!-- Navbar on small screens -->
@@ -35,7 +35,6 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
     <a href="../../index.html#about" class="w3-bar-item w3-button w3-hover-pink w3-black" onclick="toggleFunction()">ABOUT</a>
     <a href="../../index.html#portfolio" class="w3-bar-item w3-button w3-hover-pink w3-black" onclick="toggleFunction()">INTERNSHIPS</a>
     <a href="../../index.html#contact" class="w3-bar-item w3-button w3-hover-pink w3-black" onclick="toggleFunction()">BLOG</a>
-    <a href="../../index.html#" class="w3-bar-item w3-button w3-hover-pink w3-black">SEARCH</a>
   </div>
 </div>
 
@@ -51,7 +50,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
   <h1 class="w3-center">Week 20/04/27</h1>
   <h4 class="w3-center">Tags: Python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css, fpga, de10-nano</h4>
 
-<h5><em>April 29, 2020</em></h5>
+<h5 id="april-29-2020"><em>April 29, 2020</em></h5>
 
 <p>Hello and welcome to my blog! This is my first blog post and I'm really excited to be documenting my journey of exploring lots of 
 tech. </p>
@@ -59,7 +58,7 @@ tech. </p>
 <p>My exams ended on April 22, and since then I've been thinking about what cool projects I'll want to work on over the summer. I only 
 have a week off before I start my remote internship at Amazon on May 4. </p>
 
-<h3>ProjectBudget</h3>
+<h3 id="projectbudget">ProjectBudget</h3>
 
 <p>First I thought I'd be working on a project I've been meaning to complete for a while, called "ProjectBudget". It's a simple desktop app 
 where you can enter your income and expenses information, particularly the big ones that repeat like rent/bills/salary, and the app will
@@ -70,7 +69,7 @@ the full functionality of Django. </p>
 
 <p>You can find the repo of ProjectBudget on <a href="https://github.com/AreebaAziz/ProjectBudget">GitHub</a>. As of today (April 29, 2020), it is incomplete.</p>
 
-<h3>FPGA Development</h3>
+<h3 id="fpga-development">FPGA Development</h3>
 
 <p>The other thing I really wanted to get into is FPGA development! I took 2 courses where we developed on FPGAs, but I won't be taking any more
 courses on it. I didn't want my FPGA journey to end with classes, so I decided to look into doing some FPGA stuff as a hobby.</p>
@@ -79,9 +78,9 @@ courses on it. I didn't want my FPGA journey to end with classes, so I decided t
 community <a href="https://www.reddit.com/r/FPGA/">r/FPGA</a> where people who work with FPGAs - either as a hobby or for professional work - come together and talk about FPGA things!
 There are multiple posts on that subreddit that talk specifically about the first board you should get. </p>
 
-<p>After lots of research I chose to get the Terasic DE10-Nano board that has a Cyclone V FPGA, an ARM processor, and a bunch of peripherals. 
+<p>After lots of research I chose to get the <a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&amp;CategoryNo=205&amp;No=1046&amp;PartNo=1">Terasic DE10-Nano board</a> that has a Cyclone V FPGA, an ARM processor, and a bunch of peripherals. 
 I chose this one because I could use Quartus and ModelSim with it, and I've used Quartus before in my classes so I wanted to stick with what
-I'm familiar with. I bought the board from digikey and it will arrive tomorrow! Super excited to play around with it. </p>
+I'm familiar with. I bought the board from <a href="https://www.digikey.ca/products/en/development-boards-kits-programmers/evaluation-boards-embedded-complex-logic-fpga-cpld/796?k=de10-nano">Digi-Key</a> and it will arrive tomorrow! Super excited to play around with it. </p>
 
 <p>The next step was to figure out what my first projects would be on the FPGA. I had no idea where to even begin because this is still a relatively
 new field and there's not as many resources online for beginners - at least not as many as there are for regular programming. So I decided to 
@@ -107,7 +106,7 @@ that's pretty much it. This time though I wanted to see how to program the Pi to
 
 <p>I took some notes while I was looking into the Pi and the Nano, which are summarized below. </p>
 
-<h4>Raspberry Pi Specs</h4>
+<h4 id="raspberry-pi-specs">Raspberry Pi Specs</h4>
 
 <ul>
 <li>Raspberry Pi 3 Model B </li>
@@ -120,7 +119,7 @@ that's pretty much it. This time though I wanted to see how to program the Pi to
 <li>2x20 GPIO pin headers</li>
 </ul>
 
-<h4>My Breadboard Setup</h4>
+<h4 id="my-breadboard-setup">My Breadboard Setup</h4>
 
 <p>This was to play with the Pi, I wanted to see how to program GPIO pins to be
 on and off. </p>
@@ -160,7 +159,7 @@ ago. I looked up how we can control the GPIO pins, and turns out it's a lot easi
 <li>the goal above seems like it would take all summer because I only really have evenings and weekends since I'll be working full time with Amazon. I don't know how much free time I'll have yet, or how much overtime I'll do (not because I have to do overtime, but because I'll probably be super invested in my Amazon projects that I'll want to spend a lot of time on them). </li>
 </ul>
 
-<h3>Personal Website</h3>
+<h3 id="personal-website">Personal Website</h3>
 
 <p>The other thing I did this week is revamp my personal website. Before the revamp, my personal website was a single page simple website
 with just my name written animated as if it was being written in a terminal, and some links for my contact information.</p>
@@ -180,7 +179,9 @@ with fancy CSS/JS and the themes are all very tech-y and they all look very good
 too artsy. Because this website is <em>my</em> personal space. There are no rules here; I can express myself the way I want to. For someone seeking a more 
 professional portfolio, check out my <a href="https://www.linkedin.com/in/areeba-aziz/">LinkedIn</a> or <a href="../../pdf/Resume_11.pdf">resume</a>! But I hope to use this website to just be me. And to share my experiences of exploring cool tech projects! </p>
 
-<h5><em>May 1, 2020</em></h5>
+<h5 id="may-1-2020"><em>May 1, 2020</em></h5>
+
+<h3 id="getting-started-with-the-de10-nano">Getting Started with the DE10-Nano</h3>
 
 <p>I got my DE10-Nano board!!!! I'm so excited!! </p>
 
@@ -210,6 +211,228 @@ go from there. </p>
 <p><img src="img/de10-nano-quickstart-0.jpg" alt="DE10-Nano Quick Start guide page 1" width="400"/>
 <img src="img/de10-nano-quickstart-1.jpg" alt="DE10-Nano Quick Start guide page 2" width="400"/></p>
 
+<h4 id="following-the-de10-nano-quick-start-guide">Following the DE10-Nano Quick Start Guide</h4>
+
+<p>Before I start, the first thing I actually want to do is check which hardware revision I have. You can find out how to check your hardware
+version <a href="https://www.terasic.com.tw/cgi-bin/page/archive_download.pl?Language=English&amp;No=1046&amp;FID=5651e4e0b7a3671ffb4494a46a338bf3">here</a>, 
+from the <a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&amp;CategoryNo=205&amp;No=1046&amp;PartNo=4">Terasic website page for DE10-Nano resources</a>.</p>
+
+<p>Looking at the back of my board, I see that my hardware revision is C. </p>
+
+<p><img src="img/de10-nano-hw-revision-guide.png" alt="DE10-Nano Hardware revision" width="400"/>
+<img src="img/de10-nano-hw-revision.jpg" alt="DE10-Nano Hardware revision" width="400"/></p>
+
+<p>Now that I know my hardware revision, I know which User Manual to follow from <a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&amp;CategoryNo=205&amp;No=1046&amp;PartNo=4">Terasic's website</a>. I don't think the hardware version would
+make that much of a difference but I just wanted to be safe and use the correct user manual. The user manual I'll be using is <a href="https://www.terasic.com.tw/cgi-bin/page/archive_download.pl?Language=English&amp;No=1046&amp;FID=f1f656bb5f040121c36f2f93f6b107ff">here</a>.</p>
+
+<p>Alright now I'll follow the instructions in the <a href="https://www.terasic.com.tw/cgi-bin/page/archive_download.pl?Language=English&amp;No=1046&amp;FID=5fb5189ed0c367b8defcc815b8d2f38b">Quick Start guide</a>. </p>
+
+<p>1) First it says to verify that the FPGA Configuration Mode Switches are set to 01010 to boot the DE10-Nano board from the MicroSD card. 
+It looks like my board is all set:</p>
+
+<p><img src="img/de10-nano-config-mode-switches.jpg" alt="DE10-Nano Configuration Mode Switches" width="400"/></p>
+
+<p>2) Next, the instructions say to make sure the microSD card is properly installed on our board. The slot is on the back of the board. Mine looks good!</p>
+
+<p><img src="img/de10-nano-microsd-card.jpg" alt="DE10-Nano MicroSD Card" width="400"/></p>
+
+<p>3) And now we finally turn it on.. We need to connect the power adapter to the power jack on the board. After about 10 seconds the user LED
+should begin to pulse indicating that the Linux OS has booted. </p>
+
+<p>Yay it's on!!!! Very exciting!!! </p>
+
+<p><img src="img/de10-nano-on1.jpg" alt="DE10-Nano MicroSD Card" width="400"/>
+<img src="img/de10-nano-on2.jpg" alt="DE10-Nano MicroSD Card" width="400"/></p>
+
+<p>4) Okay so now that we have the board turned on, we want to start interacting with it. The Quick Start guide instructs us to 
+connect a USB cable to the Micro-B slot on the board and the other side to our PC. The Micro-B USB to Type-A USB cable is given to us. </p>
+
+<p>Once we connect it to our PC, the DE10-Nano board should appear as a USB mass storage device. </p>
+
+<p><img src="img/de10-nano-connect-to-pc.jpg" alt="DE10-Nano connected to PC" width="400"/></p>
+
+<p>I use Ubuntu on my PC. The Nano shows up like this:</p>
+
+<p><img src="img/de10-nano-as-mass-storage.png" alt="DE10-Nano as a mass storage device on PC" width="500"/></p>
+
+<p>5) Now we open up the start.html file. </p>
+
+<p>And there it is!!! A nice welcome screen from the DE10-Nano board!!</p>
+
+<p><img src="img/de10-nano-start-html.png" alt="DE10-Nano start.html on PC" width="800"/></p>
+
+<p>Okay so here I'm running into some issues. On the Quick Start guide it gives instructions for Windows users to install an RNDIS driver which 
+would enable ethernet over USB. It seems that this driver is automatically installed on Ubuntu. Running dmesg, I see the following:</p>
+
+<pre><code>    [ 9974.328267] usb 1-2.2: new high-speed USB device number 25 using xhci_hcd
+    [ 9974.433589] usb 1-2.2: New USB device found, idVendor=1d6b, idProduct=0104
+    [ 9974.433595] usb 1-2.2: New USB device strings: Mfr=3, Product=4, SerialNumber=0
+    [ 9974.433598] usb 1-2.2: Product: Multifunction Composite Gadget
+    [ 9974.433601] usb 1-2.2: Manufacturer: Linux 4.1.33-ltsi-altera with ffb40000.usb
+    [ 9974.443835] rndis_host 1-2.2:1.0 usb0: register 'rndis_host' at usb-0000:00:14.0-2.2, RNDIS device, 12:06:a0:8d:18:db
+    [ 9974.444660] cdc_acm 1-2.2:1.2: ttyACM0: USB ACM device
+    [ 9974.445483] usb-storage 1-2.2:1.4: USB Mass Storage device detected
+    [ 9974.445801] scsi host0: usb-storage 1-2.2:1.4
+    [ 9974.788973] rndis_host 1-2.2:1.0 enp0s20f0u2u2: renamed from usb0
+    [ 9974.822817] IPv6: ADDRCONF(NETDEV_UP): enp0s20f0u2u2: link is not ready
+</code></pre>
+
+<p>It seems that my PC detected the board as an RNDIS device. When I enter 192.168.7.1 on a web browser (which is supposed to serve the webpage
+from the board), I get nothing. Running ifconfig gives me:</p>
+
+<pre><code>    enp0s20f0u2u2: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+            inet6 fe80::2ee1:b252:a22a:4bd2  prefixlen 64  scopeid 0x20&lt;link&gt;
+            ether da:21:d6:ae:d7:52  txqueuelen 1000  (Ethernet)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 58  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre>
+
+<p>I can't ping 192.168.7.1 either. However I can configure the ip settings for the device as such:</p>
+
+<pre><code>    sudo ifconfig enp0s20f0u2u2 192.168.7.1 netmask 255.255.255.0 up
+</code></pre>
+
+<p>And now I can ping 192.168.7.1:</p>
+
+<pre><code>    (AreebaAziz.github.io) areeba@areebaPC:~/code/AreebaAziz.github.io/blog$ ping 192.168.7.1
+    PING 192.168.7.1 (192.168.7.1) 56(84) bytes of data.
+    64 bytes from 192.168.7.1: icmp_seq=1 ttl=64 time=0.061 ms
+    64 bytes from 192.168.7.1: icmp_seq=2 ttl=64 time=0.056 ms
+    64 bytes from 192.168.7.1: icmp_seq=3 ttl=64 time=0.057 ms
+    64 bytes from 192.168.7.1: icmp_seq=4 ttl=64 time=0.053 ms
+    ^C
+    --- 192.168.7.1 ping statistics ---
+    4 packets transmitted, 4 received, 0% packet loss, time 3048ms
+    rtt min/avg/max/mdev = 0.053/0.056/0.061/0.009 ms
+</code></pre>
+
+<p>However the webpage still doesn't load...</p>
+
+<p>I'm guessing now it's time to go into the board and see what's going on. I'll try connecting to it serially. </p>
+
+<p>To connect via serial there's a UART to USB port (USB Mini-B) on the Nano board, and the Mini-B USB cable is given to us. 
+We connect the cable to the UART-USB port on the board and the other end to our PC. </p>
+
+<p>Before I connected it, I checked my current tty devices connected to my PC: <code>ls /dev/tty</code> and then press tab to see the connected
+devices. </p>
+
+<p>Then I connected the UART-USB cable from the Nano to my PC. When I run the <code>ls /dev/tty</code> + tab again, there's a new device
+listed, which for me was <code>ttyUSB0</code>.</p>
+
+<p>I ran the following to install a package you can use to communicate serially to devices:</p>
+
+<pre><code>    sudo apt install cu 
+</code></pre>
+
+<p>Then, run:</p>
+
+<pre><code>    sudo cu -l /dev/ttyUSB0 -s 115200
+</code></pre>
+
+<p>When I first ran that, it gave me an error saying permission denied/or device in use, To resolve the permission denied part, 
+I ran this:</p>
+
+<pre><code>    sudo chown root:root /dev/ttyUSB0
+</code></pre>
+
+<p>When I ran the <code>cu</code> command above again, the connected worked (it says "Connected"). </p>
+
+<p>However I didn't see any data come in and I couldn't send any data either. So I unplugged the cable, turned off the Nano board,
+re-plugged the cable, started reading from the serial connection again, and then turned on the Nano. </p>
+
+<p>This time I got stuff! I got a bunch of logs related to the Nano being boot up. Cool stuff! </p>
+
+<p>In a few seconds I got the Angstrom login message:</p>
+
+<pre><code>    .---O---.                                           
+    |       |                  .-.           o o        
+    |   |   |-----.-----.-----.| |   .----..-----.-----.
+    |       |     | __  |  ---'| '--.|  .-'|     |     |
+    |   |   |  |  |     |---  ||  --'|  |  |  '  | | | |
+    '---'---'--'--'--.  |-----''----''--'  '-----'-'-'-'
+                    -'  |
+                    '---'
+
+    The Angstrom Distribution de10-nano ttyS0
+
+    Angstrom v2016.12 - Kernel 4.1.33-ltsi-altera
+
+    de10-nano login: 
+</code></pre>
+
+<p>I've read that there's no default password and we should be able to hit enter and log in. However I can't seem to send any data
+from my PC through the serial connection. Also, I'm getting these log messages from the Nano:</p>
+
+<pre><code>    de10-nano login: [   17.398305] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+    [   18.719904] IPv6: ADDRCONF(NETDEV_UP): usb0: link is not ready
+    [   19.237056] cfg80211: Calling CRDA to update world regulatory domain
+    [   22.396558] cfg80211: Calling CRDA to update world regulatory domain
+    [   25.556639] cfg80211: Calling CRDA to update world regulatory domain
+    [   28.716481] cfg80211: Calling CRDA to update world regulatory domain
+    [   31.876490] cfg80211: Calling CRDA to update world regulatory domain
+    [   35.036484] cfg80211: Exceeded CRDA call max attempts. Not calling CRDA
+</code></pre>
+
+<p>This might be a problem!</p>
+
+<p>Okay so after trying different things, I finally got to login to the Nano board!</p>
+
+<p>Here's what I did:</p>
+
+<ul>
+<li>Instead of using the <code>cu</code> command I tried above, I used Python's pyserial module. I used this module for connecting to devices
+serially during my internship at Arcturus; that's what I got the idea. </li>
+<li>To install the pyserial module, run:</li>
+</ul>
+
+<pre><code>    sudo python3 -m pip install pyserial
+</code></pre>
+
+<ul>
+<li>Then, keep the Nano board powered off, but connect the serial cable to the Nano. Then:</li>
+</ul>
+
+<pre><code>    areeba@areebaPC:~/code/AreebaAziz.github.io/blog$ sudo python3 -m serial.tools.miniterm - 115200
+
+    --- Available ports:
+    ---  1: /dev/ttyUSB0         'FT232R USB UART'
+    --- Enter port index or full name: 1
+    --- Miniterm on /dev/ttyUSB0  115200,8,N,1 ---
+    --- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+    ␀c
+    .---O---.                                           
+    |       |                  .-.           o o        
+    |   |   |-----.-----.-----.| |   .----..-----.-----.
+    |       |     | __  |  ---'| '--.|  .-'|     |     |
+    |   |   |  |  |     |---  ||  --'|  |  |  '  | | | |
+    '---'---'--'--'--.  |-----''----''--'  '-----'-'-'-'
+                    -'  |
+                    '---'
+
+    The Angstrom Distribution de10-nano ttyS0
+
+    Angstrom v2016.12 - Kernel 4.1.33-ltsi-altera
+
+    de10-nano login: 
+</code></pre>
+
+<p>Great! The serial connection works without the weird CRDA error when using <code>cu</code>. I can also send data from my PC now. 
+The default login for the Nano is: root, and there's no password so just hit enter. </p>
+
+<p>And then.... I'm finally in!!</p>
+
+<pre><code>    root@de10-nano:~# ls -l
+    total 4
+    drwxr-xr-x    2 root     root          4096 Mar 31 02:21 Desktop
+    root@de10-nano:~# 
+    root@de10-nano:~# 
+</code></pre>
+
 
 </div>
+<footer class="bgimg-4 w3-center w3-padding-64 medium-opacity">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
 </body>

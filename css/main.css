@@ -5,6 +5,11 @@ body, html {
   line-height: 1.8;
 }
 
+.blogpost {
+  background-color: rgba(45, 45, 45);
+  color: #888;
+}
+
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
