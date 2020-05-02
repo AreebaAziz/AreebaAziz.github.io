@@ -45,8 +45,6 @@ print("Week: " + week)
 lines = file.readlines()
 file.close()
 
-# sections = re.findall("%% ?begin ?(\[[^\]]*][^%]*)%% ?end", lines, re.DOTALL)
-
 sections = []
 
 # find the %% begin line

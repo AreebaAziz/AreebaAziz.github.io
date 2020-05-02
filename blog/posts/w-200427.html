@@ -26,7 +26,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
     <a href="../../index.html#portfolio" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-briefcase"></i>&nbsp; INTERNSHIPS</a>
     <a href="../../index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-newspaper-o"></i> &nbsp;BLOG</a>
 
-    <a href="#projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;ProjectBudget</a><a href="#fpga-development" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;FPGA Development</a><a href="#personal-website" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Personal Website</a><a href="#getting-started-with-the-de10-nano" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Getting Started with the DE10-Nano</a>
+    <a href="#projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;ProjectBudget</a><a href="#fpga-development" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;FPGA Development</a><a href="#personal-website" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Personal Website</a><a href="#getting-started-with-the-de10-nano" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Getting Started with the DE10-Nano</a><a href="#first-fpga-design" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;First FPGA Design</a>
     
   </div>
 
@@ -48,7 +48,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
 <!-- blog body --->
 <div class="w3-content w3-container w3-padding-32" id="about">
   <h1 class="w3-center">Week 20/04/27</h1>
-  <h4 class="w3-center">Tags: Python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css, fpga, de10-nano</h4>
+  <h4 class="w3-center">Tags: Python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css, fpga, de10-nano, fpga, de10-nano, verilog, quartus</h4>
 
 <h5 id="april-29-2020"><em>April 29, 2020</em></h5>
 
@@ -494,7 +494,62 @@ from the HPS side. </li>
 <li>port labs 3, 4, 5 from my digital circuits class to the Nano board. </li>
 </ul>
 
-<p>That's all for today. :D </p>
+<p>That's all for now. :D </p>
+
+<h3 id="first-fpga-design">First FPGA Design</h3>
+
+<p>I'm going to follow the instructions on the <a href="https://www.terasic.com.tw/cgi-bin/page/archive_download.pl?Language=English&amp;No=1046&amp;FID=86a1c2f74b7ff8a8abf58d2b4689d4be">"My First FPGA" guide</a> from Terasic.</p>
+
+<p>First I downloaded Quartus II Prime Standard Edition from <a href="https://fpgasoftware.intel.com/">Intel's website</a>. The download took a long time, I let it run for a few hours while I was doing other stuff. Once it was downloaded as a .tar file, I unzipped by running:</p>
+
+<pre><code>    mkdir Quartus-19.1.0.670
+    tar -xvf Quartus-19.1.0.670-linux-complete.tar -C Quartus-19.1.0.670
+</code></pre>
+
+<p>Next, I cd'd into the Quartus-19.1.0.670 directory and found a <code>setup.sh</code> file. I ran by <code>sh setup.sh</code>. This opened up a GUI 
+installer. I checked off the following components to install:</p>
+
+<p><img src="img/quartus-installer.png" alt="Quartus Installer" width="600"/></p>
+
+<p>After it was installed, it prompted me to enter licensing information, or buy a license or start a limited 30-day trial. 
+My university provides license for Quartus, so I used that and now I'm in Quartus!! </p>
+
+<p><img src="img/quartus-homepage.png" alt="Quartus Main Screen" width="700"/></p>
+
+<p>Now following the "My First FPGA" guide, I'm going to take some important notes:</p>
+
+<ul>
+<li>A Quartus II project consists of a set of files that maintain information about our FPGA design.
+<ul>
+<li>The Settings file (.qsf) and Project file (.qpf) are the primary files in a project</li>
+</ul></li>
+<li>First, we create a new project. Go to File -> New Project Wizard. </li>
+<li>There must be a top-level design entity of each project. Sort of like a "main" function in traditional programming. </li>
+</ul>
+
+<p>While creating a new project, we select a device for our board, which for the DE10-Nano is:</p>
+
+<p><img src="img/quartus-select-device.png" alt="Quartus Select Device" width="700"/></p>
+
+<p>In the next step, the New Project Wizard prompts you to specify some EDA tools. I will be using SystemVerilog as the HDL instead of Verilog, as I've read that SystemVerilog is a superset of Verilog, is newer and has more features. I've also used SystemVerilog extensively in one of my digital circuits classes so I'm quite familiar with it. </p>
+
+<p><img src="img/quartus-select-eda-tools.png" alt="Quartus Select EDA Tools" width="700"/></p>
+
+<p>Once I click Finish, Quartus creates the new project! </p>
+
+<p><img src="img/quartus-fresh-project.png" alt="Quartus Fresh Project" width="700"/></p>
+
+<p>Now I'm actually going to diverge from the "My First FPGA" guide. This guide uses a combination of schematic capture and HDL, but I only want to design in HDL. Something important I learned by going through the tutorial was what a "Phase-Locked Loop (PLL)" is. I've seen PLL a lot and learned about it in class but I forgot so I looked it up, and according to <a href="https://en.wikipedia.org/wiki/Phase-locked_loop">Wikipedia</a>:</p>
+
+<blockquote>
+  <p>A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal whose phase is related
+  to the phase of an input signal. (...) They can be used to (...) distribute precisely timed clock pulses in digital 
+  logic circuits such as microprocessors. Since a single integrated circuit can provide a complete phase-locked-loop 
+  building block, the technique is widely used in modern electronic devices, with output frequencies from a fraction 
+  of a hertz up to many gigahertz. </p>
+</blockquote>
+
+<p>Very cool! So I think I'm going to need a PLL in pretty much all my designs, except maybe purely combinational designs that don't require a clock. </p>
 
 
 </div>
