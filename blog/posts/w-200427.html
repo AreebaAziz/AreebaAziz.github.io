@@ -26,7 +26,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
     <a href="../../index.html#portfolio" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-briefcase"></i>&nbsp; INTERNSHIPS</a>
     <a href="../../index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"><i class="fa fa-newspaper-o"></i> &nbsp;BLOG</a>
 
-    <a href="#projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;ProjectBudget</a><a href="#fpga-development" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;FPGA Development</a><a href="#personal-website" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Personal Website</a><a href="#getting-started-with-the-de10-nano" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Getting Started with the DE10-Nano</a><a href="#first-fpga-design" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;First FPGA Design</a>
+    <a href="#projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;ProjectBudget</a><a href="#fpga-development" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;FPGA Development</a><a href="#personal-website" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Personal Website</a><a href="#getting-started-with-the-de10-nano" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Getting Started with the DE10-Nano</a><a href="#first-fpga-design" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;First FPGA Design</a><a href="#continuing-projectbudget" class="w3-bar-item w3-button w3-hide-small w3-hover-pink w3-black"> &nbsp;Continuing ProjectBudget</a>
     
   </div>
 
@@ -48,7 +48,7 @@ Template: https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm
 <!-- blog body --->
 <div class="w3-content w3-container w3-padding-32" id="about">
   <h1 class="w3-center">Week 20/04/27</h1>
-  <h4 class="w3-center">Tags: Python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css, fpga, de10-nano, fpga, de10-nano, verilog, quartus</h4>
+  <h4 class="w3-center">Tags: python, desktop app, fpga, de10-nano, digital circuits, raspberry pi, frontend, html, css, verilog, quartus, projectbudget</h4>
 
 <h5 id="april-29-2020"><em>April 29, 2020</em></h5>
 
@@ -549,7 +549,174 @@ My university provides license for Quartus, so I used that and now I'm in Quartu
   of a hertz up to many gigahertz. </p>
 </blockquote>
 
-<p>Very cool! So I think I'm going to need a PLL in pretty much all my designs, except maybe purely combinational designs that don't require a clock. </p>
+<p>Very cool! So basically a PLL is used to generate a precise clock signal given an input clock (oscillator) and a multiplier. So on the DE10-Nano, 
+there's a 50Hz oscillator (I think), by using a PLL you can use that input clock signal and generate any frequency output clock signal to use for your
+design. I think I'm going to need a PLL in pretty much all my designs, except maybe purely combinational designs that don't require a clock. </p>
+
+<h4 id="may-3-2020"><em>May 3, 2020</em></h4>
+
+<h3 id="continuing-projectbudget">Continuing ProjectBudget</h3>
+
+<p>Today I am switching gears from FPGA work to some high level Python stuff. I talked about my small project <em>ProjectBudget</em> earlier in this post, 
+and I'm going to work on it more today. </p>
+
+<p>So far, I've built a functioning login system where a user can create a new account, sign in, and log out. I am storing the passwords securely using hashing. 
+Here is what the login screen looks like:</p>
+
+<p><img src="img/projectbudget-loginscreen.png" alt="ProjectBudget login screen" width="500"/></p>
+
+<p>Once you login you see a dashboard that current looks like this:</p>
+
+<p><img src="img/projectbudget-dashboard0.png" alt="ProjectBudget empty dashboard" width="500"/></p>
+
+<p>You can log out by clicking the File on the top menu, and then click logout.</p>
+
+<p>The login/sign up functionality works, so if you try to create a new user with a username that already exists, it won't let you. If you try to
+login with an incorrect password, it won't let you login. However, currently I only log these errors but I do not handle them in a user-friendly manner, 
+so the user will not see any message if their login/sign up attempt doesn't work. </p>
+
+<p>I do mean to get to the proper user-facing error handling eventually, but for now it's on a list of to-do items. I want to first create a minimal functionaing
+prototype because I actually intend to use this app for myself. </p>
+
+<p>I think part of the reason I've been stuck in this project and haven't worked on it for months is because I don't have a proper set of requirements. 
+I have a general idea of what I want this app to do, but these requirements are in my head and aren't written in a semi-formal manner. Because of this I don't
+know what to develop next (what feature to work on next). </p>
+
+<p>So today, first I will write down a proper set of user requirements. </p>
+
+<p>I want the user to be able to enter the following information on the app:</p>
+
+<ul>
+<li><p>Accounts:</p>
+
+<ul>
+<li>eg. bank accounts, investment accounts, Cash</li>
+<li>for each account, determine whether it's immediately accessible (i.e. cash), or not easily accessible (i.e. investments)</li>
+<li>an extra feature could be to determine if the account is associated with any government accounts, such as TFSAA, retirement funds, etc. </li>
+</ul></li>
+<li><p>Money Transfers:</p>
+
+<ul>
+<li>each transfer is either "internal" or "external"
+<ul>
+<li>internal: a transfer between a user's accounts, such as from checking to an investment account</li>
+<li>external: income or bill from/to the user's set of accounts, such as salary income, or rent</li>
+</ul></li>
+<li>each transfer should have the following fields: 
+<ul>
+<li>name/description</li>
+<li>from (either an internal account or an external account)</li>
+<li>to (either an internal account or external account)</li>
+<li>amount (include negative value for expenses such as rent)</li>
+<li>start date and rules of repetition
+<ul>
+<li>start date: the first day of transfer. If one-time transfer, list the date as a start date</li>
+</ul></li>
+<li>rules of reptition
+<ul>
+<li>no repetition</li>
+<li>repeated monthly, exactly {30, 31} days after start-date</li>
+<li>repeated monthly, on the {day}'th of the month, where {day} is the day of month of start date. 
+<ul>
+<li>eg. if start date is May 3, then {day} will be 3</li>
+</ul></li>
+<li>repeated weekly</li>
+<li>repeated bi-weekly</li>
+</ul></li>
+<li>end date </li>
+<li>rules of repetition should be easily extensible. Consider using the Strategy design pattern to implement.</li>
+<li>type (internal or external) is:
+<ul>
+<li>internal iff from is internal AND to is internal </li>
+<li>else external </li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>User interface</p>
+
+<ul>
+<li>line graph showing the future amounts of money the user will have based on the accounts and money transfer information</li>
+<li>bar graph (ideally overlaying the line graph) showing each money transfer (x axis is the date)</li>
+<li>the graphs should have check boxes to show/hide types of stuff
+<ul>
+<li>eg. show only income from Amazon, show only total income cashable, etc. </li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Given these informal requirements, I think I will change this project implementation to be a web-app using the Python Django framework, because
+the data involved in this app would be a bit more complicated than I originally thought (more relationships between pieces of data than I originally thought), 
+and I don't want to deal directly with SQL statements to build the schema for this. I've used Django a lot before and it provides a very amazing framework
+to abstract away database details so I can focus on my application logic. Additionally, there's generally a lot of support online for web applications, so
+I'll be able to find lots of resources on front-end JavaScript libraries to help make the user interface, such as the graph interface. </p>
+
+<p>Also, since I'll be making a webapp, I could then have the option of hosting it on a Raspberry Pi at home so that my family can use the app on their phones/
+computers. I'm the only one in my family who uses the Ubuntu OS, so porting it to Windows or Mac OS for my family wouldn't be an easy task. Also web-apps
+are generally easily accesible by smart phones so that would provide more usability for the app. </p>
+
+<p>Now I basically have to re-start my project. I could either do this on the git repo, or create an entirely new repo. I do want to keep the work I did with
+the Python desktop app login/sign up, so I think I'll archive this repo on GitHub and then start a fresh new one for the webapp. </p>
+
+<p>The archived ProjectBudget is now called <a href="https://github.com/AreebaAziz/PyQTLoginSignup">PyQTLoginSignup</a>.</p>
+
+<p>The new ProjectBudget repo is <a href="https://github.com/AreebaAziz/ProjectBudget">here</a>. </p>
+
+<h4 id="creating-the-new-projectbudget">Creating the new ProjectBudget</h4>
+
+<p>For any project that I want to keep on GitHub, first I create a new repo
+on GitHub, and then clone it to my local computer. </p>
+
+<p>My first step in any Python project is to set up a virtual environment:</p>
+
+<pre><code>    python -m venv .
+</code></pre>
+
+<p>Since I'll be using Django, I install it:</p>
+
+<pre><code>    pip install django
+    pip install django-extensions
+</code></pre>
+
+<p>I will create a separate folder for all front-end stuff like static content, 
+JS and CSS. I'll also use a Bootstrap-based html/css/js template called
+<a href="https://adminlte.io/">Admin-LTE</a>. </p>
+
+<pre><code>    mkdir frontend
+    cd frontend
+</code></pre>
+
+<p>First I need to make sure my npm is up to date. To do this I'm following
+the instructions from this <a href="https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version">StackOverflow post</a> (top comment).</p>
+
+<pre><code>    sudo apt-get install nodejs # make sure I have nodejs installed
+    sudo npm cache clean -f 
+    sudo npm install -g n
+    sudo n stable
+    sudo apt-get install --reinstall nodejs-legacy     # fix /usr/bin/node
+</code></pre>
+
+<p>Then I install the admin-lte module:</p>
+
+<pre><code>    npm install admin-lte --save
+</code></pre>
+
+<p>I'm going to run <code>npm init</code> in the frontend directory, but I'm not actually using nodejs at all. I think creating a node project will help later
+with tracking node packages for this project? I'm not too sure about how node works. I just want the admin-lte template which requires a lot of front-end
+modules that can be easily all installed with npm. </p>
+
+<p>I added <code>frontend/node_modules</code> to the <code>.gitignore</code>, and then committed. </p>
+
+<h4 id="using-template_django_project">Using template_django_project</h4>
+
+<p>I actually created a "template" project about a year ago that uses Django and the Admin-LTE framework. It provides a functioning user login/signup
+interface, and takes care of setting up the front-end base templates. I know that I haven't updated that project and it probably has some issues right now, 
+but I think I'll go back to it, update it so that it works, try to make it as robust as possible, and then create my ProjectBudget from the template base. </p>
+
+<p>Okay so I've updated my <a href="https://github.com/AreebaAziz/template_django_project">template_django_project</a>, fixed bugs and it
+works now. Also updated its README for fixed instructions. </p>
+
+<p>Now that I have that template, I'll delete my ProjectBudget repo (again) and then create a new GitHub repo based off of the 
+template repo. </p>
 
 
 </div>

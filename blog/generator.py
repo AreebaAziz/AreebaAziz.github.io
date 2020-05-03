@@ -77,7 +77,7 @@ all_tags = []
 for si in range(len(sections)):
     tags = re.findall("\[(.*)\]", sections[si])
     text = sections[si].replace(tags[0], '', 1).replace('[','',1).replace(']','',1)
-    tags = [s.strip() for s in tags[0].split(",")]
+    tags = [s.strip().lower() for s in tags[0].split(",")]
 
     sec_filename = SECTIONS + "/w-{week}-s-{seci:02d}".format(week=week,seci=si)
     # create the section file
@@ -92,7 +92,7 @@ for si in range(len(sections)):
 
         # create or append to tag files, if not dryrun
         for tag in tags:
-            if tag != '':
+            if tag != '' and tag not in all_tags:
                 all_tags.append(tag)
                 if not dryrun:
                     file = open(TAGS + "/" + tag, "a")
